@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <p>
+        testing
+    </p>
+</body>
+
+<script>
+
+    function testf(num){
+        return num+2;
+    
+    }
+    function computerPlay(){
+        num=Math.random() 
+        if(num< .333){
+            return "Rock";
+
+
+        }
+        else if (num > .666){
+            return "Paper";
+        }
+        else {
+            return "Scizzors";
+        }
+    }
+
+    function playerChoice(){
+        choice = window.prompt("Rock, Paper, or Scizzors?")
+        return choice;
+    }
+
+    function choiceError(playerSelection){
+        if(playerSelection == "Rock"||playerSelection == "Paper"||playerSelection == "Scizzors"){
+            return playerSelection;
+
+        }
+            else {
+                return alert("Make sure to type Rock, Paper, or Scizzors!");
+            }
+
+    }
+
+    function compareChoice(playerSelection,computerSelection){
+        switch(playerSelection){
+            case Rock: 
+                switch(computerSelection){
+                    case Rock:
+                        return "Both of you chose Rock!  It's a tie!"
+
+                }
+
+        }
+
+        
+
+    }
+    
+        
+</script>
+
+</html>
