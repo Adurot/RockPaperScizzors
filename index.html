@@ -15,6 +15,9 @@
 
 <script>
 
+    var playerScore=0;
+    var computerScore=0;
+
     function testf(num){
         return num+2;
     
@@ -57,39 +60,81 @@
                     case "Rock":
                         return "Both of you chose Rock!  It's a tie!"
                     case "Paper":
+                        computerScore++;
                         return "Paper beats rock!  Computer wins!"
                     case "Scizzors":
+                        playerScore++;
                         return "Rock beats Paper!  You win!"
                 }
+                console.log(playerScore + " " + computerScore)
                 break;
+                
             
             case "Paper": 
                 switch(computerSelection){
                     case "Rock":
+                        playerScore++;
                         return "Paper beats rock!  You win!"
                     case "Paper":
-                        return "Both of you chose Rock!  It's a tie!"
+                        return "Both of you chose Paper!  It's a tie!"
                     case "Scizzors":
+                        computerScore++;
                         return "Scizzors beats Paper!  Computer wins!"
                 }
+                console.log(playerScore + " " + computerScore)
                 break;
             case "Scizzors": 
                 switch(computerSelection){
                     case "Rock":
+                        computerScore++;
                         return "Rock Beats Scizzors!  Computer wins!"
                     case "Paper":
+                        playerScore++;
                         return "Scizzors beats paper!  You win!"
                     case "Scizzors":
                         return "You both chose Scizzors!  It's a tie!"
                 }
+                
                 break;
+            default:
+                console.log("this is " + playerSelection);
+                return "You must choose a Rock, Paper or Scizzors (capitalized)"
             
         }
 
         
 
     }
-    
+    function game2(){
+        
+        for(let i=1; i<5; i++) {
+            winner= compareChoice("Paper", computerPlay());
+            console.log(playerScore + " " + computerScore);
+            console.log(i);
+            console.log(winner);
+        }
+        final=playerScore-computerScore
+        switch (final) {
+            case final>0:  
+                console.log("You have won the game!")
+            case final<0:  
+                console.log("Computer has won the game!")
+            default:
+                console.log("The game is a tie!")
+        }
+            
+        console.log("Finished")
+    }
+
+    function game(){
+        const playerSDefault="Paper";
+        computerSelection = computerPlay();
+        console.log( "compareChoice");
+        compareChoice("Paper", computerScore);
+        console.log(playerScore + " " + computerScore);
+        console.log( "compareChoice");
+        return compareChoice();
+    }
         
 </script>
 
