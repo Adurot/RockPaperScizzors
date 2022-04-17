@@ -52,13 +52,38 @@
 
     function compareChoice(playerSelection,computerSelection){
         switch(playerSelection){
-            case Rock: 
+            case "Rock": 
                 switch(computerSelection){
-                    case Rock:
+                    case "Rock":
                         return "Both of you chose Rock!  It's a tie!"
-
+                    case "Paper":
+                        return "Paper beats rock!  Computer wins!"
+                    case "Scizzors":
+                        return "Rock beats Paper!  You win!"
                 }
-
+                break;
+            
+            case "Paper": 
+                switch(computerSelection){
+                    case "Rock":
+                        return "Paper beats rock!  You win!"
+                    case "Paper":
+                        return "Both of you chose Rock!  It's a tie!"
+                    case "Scizzors":
+                        return "Scizzors beats Paper!  Computer wins!"
+                }
+                break;
+            case "Scizzors": 
+                switch(computerSelection){
+                    case "Rock":
+                        return "Rock Beats Scizzors!  Computer wins!"
+                    case "Paper":
+                        return "Scizzors beats paper!  You win!"
+                    case "Scizzors":
+                        return "You both chose Scizzors!  It's a tie!"
+                }
+                break;
+            
         }
 
         
