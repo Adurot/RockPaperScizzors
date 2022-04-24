@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
 </head>
+
 <body>
     <p>
-        testing
+        <button>Rock</button>
+        <button>Paper</bu"tton>
+        <button>Scizzors</button>
     </p>
 </body>
 
 <script>
 
-    var playerScore=0;
-    var computerScore=0;
+    var playerScore = 0;
+    var computerScore = 0;
 
-    function testf(num){
-        return num+2;
-    
+    function testf(num) {
+        return num + 2;
+
     }
-    function computerPlay(){
-        num=Math.random() 
-        if(num< .333){
+    function computerPlay() {
+        num = Math.random()
+        if (num < .333) {
             return "Rock";
 
 
         }
-        else if (num > .666){
+        else if (num > .666) {
             return "Paper";
         }
         else {
@@ -37,26 +41,26 @@
         }
     }
 
-    function playerChoice(){
+    function playerChoice() {
         choice = window.prompt("Rock, Paper, or Scizzors?")
         return choice;
     }
 
-    function choiceError(playerSelection){
-        if(playerSelection == "Rock"||playerSelection == "Paper"||playerSelection == "Scizzors"){
+    function choiceError(playerSelection) {
+        if (playerSelection == "Rock" || playerSelection == "Paper" || playerSelection == "Scizzors") {
             return playerSelection;
 
         }
-            else {
-                return alert("Make sure to type Rock, Paper, or Scizzors!");
-            }
+        else {
+            return alert("Make sure to type Rock, Paper, or Scizzors!");
+        }
 
     }
 
-    function compareChoice(playerSelection,computerSelection){
-        switch(playerSelection){
-            case "Rock": 
-                switch(computerSelection){
+    function compareChoice(playerSelection, computerSelection) {
+        switch (playerSelection) {
+            case "Rock":
+                switch (computerSelection) {
                     case "Rock":
                         return "Both of you chose Rock!  It's a tie!"
                     case "Paper":
@@ -68,10 +72,10 @@
                 }
                 console.log(playerScore + " " + computerScore)
                 break;
-                
-            
-            case "Paper": 
-                switch(computerSelection){
+
+
+            case "Paper":
+                switch (computerSelection) {
                     case "Rock":
                         playerScore++;
                         return "Paper beats rock!  You win!"
@@ -83,8 +87,8 @@
                 }
                 console.log(playerScore + " " + computerScore)
                 break;
-            case "Scizzors": 
-                switch(computerSelection){
+            case "Scizzors":
+                switch (computerSelection) {
                     case "Rock":
                         computerScore++;
                         return "Rock Beats Scizzors!  Computer wins!"
@@ -94,69 +98,77 @@
                     case "Scizzors":
                         return "You both chose Scizzors!  It's a tie!"
                 }
-                
+
                 break;
             default:
                 console.log("this is " + playerSelection);
                 return "You must choose a Rock, Paper or Scizzors (capitalized)"
-            
+
         }
 
-        
+
 
     }
-    function gameTest(){
-        
-        for(let i=1; i<5; i++) {
-            winner= compareChoice("Paper", computerPlay());
+    function gameTest() {
+
+        for (let i = 1; i < 5; i++) {
+            winner = compareChoice("Paper", computerPlay());
             console.log(playerScore + " " + computerScore);
             console.log(i);
             console.log(winner);
         }
-        final=playerScore-computerScore
-        console.log("Final Score "+final);
-        if (final>0){
-            
-                console.log("You have won the game!");
-        }
-            else if (final<0) {  
-                console.log("Computer has won the game!");
-                }
-            else {
-                console.log("The final score is a tie!")
-                
-        }
-        console.log("Final Score "+final);
-            
-        console.log("Finished")
-    }
+        final = playerScore - computerScore
+        console.log("Final Score " + final);
+        if (final > 0) {
 
-    function gamePlay(){
-        var choice="paper";
-        for(let i=1; i<5; i++) {
-            choice=playerChoice();
-            winner= compareChoice(choice, computerPlay());
-            console.log(playerScore + " " + computerScore);
-            console.log(i);
-            console.log(winner);
-        }
-        final=playerScore-computerScore;
-        console.log("Final Score "+final);
-        if (final>0){
-            
             console.log("You have won the game!");
-    }
-        else if (final<0) {  
+        }
+        else if (final < 0) {
             console.log("Computer has won the game!");
-            }
+        }
         else {
             console.log("The final score is a tie!")
-            
-    }
-            
+
+        }
+        console.log("Final Score " + final);
+
         console.log("Finished")
     }
+    var choice;
+    let i;
+        function playRound(){
+            choice = playerChoice();
+            winner = compareChoice(choice, computerPlay());
+            console.log(playerScore + " " + computerScore);
+            console.log(i);
+            console.log(winner);
+        }
+    /*function gamePlay() {
         
+        for (i = 0; i < 5; i++) {
+            choice = playerChoice();
+            winner = compareChoice(choice, computerPlay());
+            console.log(playerScore + " " + computerScore);
+            console.log(i);
+            console.log(winner);
+        }
+        final = playerScore - computerScore;
+        console.log("Final Score " + final);
+        if (final > 0) {
+
+            console.log("You have won the game!");
+        }
+        else if (final < 0) {
+            console.log("Computer has won the game!");
+        }
+        else {
+            console.log("The final score is a tie!")
+
+        }
+
+        console.log("Finished")
+    }*/
+
 </script>
 
 </html>
